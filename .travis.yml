@@ -1,8 +1,14 @@
 language: ruby
 rvm: 2.6.1
 before_install:
- - gem install bundler:2.0.1
+- gem install bundler:2.0.1
 script:
- - bundle exec rake db:create
- - bundle exec rake db:migrate
- - bundle exec rspec
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
+deploy:
+  provider: heroku
+  app: badger-student
+  api_key:
+    secure: CmQMraKxMpx1/z/cVHQtR6ZaBQ+wanR2mDmZD0N6yKT0uX6hdK/TUmnFeoACKs8/BX1UkUVtottl42JkAOJcpE6bh0wY2j7HNt/moggFicfgHjGtj7S9+IDnMtdKCjWRtOnsMOV+qnIICv6c83Q7HTH8IelC3W7Xi02Yo8tuR5FWi/ZwBK2pz10YRjbKMh81KywzYTKpwcfuaDA7GgPCr5A7HnJlpyhuEe8vwwTkchiEATW4SuRAucjrSRtiKSEWGXNMQeadAhS3bl0M4UdwgyBnzTi/13a8TYKD76a557sjWjQ0L9xKOi6RMWEIZgAlZh6Nvi/j4XOf+z+BuEgavSOUvRZEATKgTI+yDuyOaoJ9C5kAdQaP/AqMr3RuWTK/VL72RBXCxoXGBv1lHg345RviJJYiAl8cOuqN1fW8FjFprsdkqWA8em8c2sglUO7+2d95aVZ+arGvdQ9UX2sMubIqkpLmqLYbQ8HDIDqIV65icHg3fZ4lIHRSGRrmqbQJ3aESAL0TC/KNE53/pZxE0JwrY8EdPKtoWAJH4BEFQrTRhQYjYB7xeBkZT1gV9MO7CwX9xRj1S305n022ZyRQJa+t4PdO990k+hSdKQfVCaJgJVgBrS+7LBJL6Q4MIaEnq6XtbPU4XsLvVwff5lqA//lKKnkYjtAs8IoXJPv84UU=
+  on: heroku
