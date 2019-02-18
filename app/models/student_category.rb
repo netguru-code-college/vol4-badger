@@ -1,3 +1,3 @@
-class StudentCategory < ApplicationRecord
-  has_one :category
-end
+# class StudentCategory < ApplicationRecord
+#   has_one :category
+# end
