@@ -12,3 +12,6 @@ Course.create({name: "Biologia molekularna", description: "to jest opis kursu", 
 Category.create({name: "Matematyka"})
 Category.create({name: "Medycyna"})
 Category.create({name: "Biologia"})
+
+Student.create({email: "test1@wp.pl", password: "password1"})
+Student.create({email: "test2@wp.pl", password: "password2"})
