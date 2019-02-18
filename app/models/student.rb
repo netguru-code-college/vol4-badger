@@ -5,11 +5,9 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :course_students
-  has_many :student_categories
-
-  # student can enroll for many courses
   has_many :courses, through: :course_students
 
-  # courses can be followed by many students
+  has_many :student_categories
   has_many :categories, through: :student_categories
+
 end
