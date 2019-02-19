@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
 
     def create
       category = Category.create(create_params)
-      redirect_to = "/categories/index"
+      redirect_to "/categories"
     end
 
     def edit
