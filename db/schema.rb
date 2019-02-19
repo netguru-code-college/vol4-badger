@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2019_02_19_123000) do
     t.text "description"
   end
 
+  create_table "resources", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+    t.boolean "completed"
+    t.string "type"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_resources_on_course_id"
+  end
+
   create_table "student_categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,4 +66,5 @@ ActiveRecord::Schema.define(version: 2019_02_19_123000) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "resources", "courses"
 end

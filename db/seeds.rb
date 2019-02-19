@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Course.create({name: "Matematyka Stosowana", description: "to jest opis kursu", category_id: 1})
+Course.create({name: "Medycyna pracy", description: "to jest opis kursu", category_id: 2})
+Course.create({name: "Biologia molekularna", description: "to jest opis kursu", category_id: 3})
 Category.create({name: "Matematyka"})
 Category.create({name: "Medycyna"})
 Category.create({name: "Biologia"})
