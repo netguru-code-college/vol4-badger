@@ -10,6 +10,16 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @category_options = []
+    @categories = Category.all
+
+    @categories.all.each do |category|
+      category_elements = []
+      category_elements.push(category.name)
+      category_elements.push(category.id)     
+      @category_options.push(category_elements)      
+    end
+
   end
 
   def create
