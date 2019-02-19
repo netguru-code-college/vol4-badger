@@ -19,7 +19,7 @@
 
           <div class="row" style="margin-left: 1vw;">
             <div class="col-sm-12">
-            <%= course.name %>
+            <%= link_to(course.name, "courses/" + course.id.to_s + "/show")%>
             </div>
           </div>
 
