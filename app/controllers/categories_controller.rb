@@ -5,9 +5,7 @@ class CategoriesController < ApplicationController
    end
 
    def show
-    id = params[:id]  
-    category = Category.find(id)  
-    @courses = category.courses
+    
    end
 
     def new

@@ -1,8 +1,9 @@
 function ready(){
 
-  $('.category_name').click(function(){
-    
-    $('.display_course').toggleClass('hidden');
+ $('body').on('click', '.category_name', function(){
+
+     // $('.display_course').toggleClass('hidden');
+     $(this).next(".display_course").toggleClass('hidden')
         
   });
 
@@ -12,6 +13,5 @@ $(document).ready(function() {
   ready();
 });
 
-$(document).on('turbolinks:load', function() {
-  ready();
-});
+
+
