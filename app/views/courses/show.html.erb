@@ -1,60 +1,51 @@
 <div class="row">
   <div class="jumbotron">
     <h1 class="display-4"> <%= @course.name %> </h1>
-    <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by [author.username].</p>
+    <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by <%= @course.author %>.</p>
     <hr class="my-4">
     <p>It uses <%= @course.description %> </p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Enroll</a>
+      <%= link_to "Enroll", 
+                        enroll_path(id: @course),
+                          class: "btn btn-xs btn-success", method: :post %>
     </p>
   </div>
 </div>
 
 
 <div class="row">
-<h1> Resources </h1>
-<table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Link</th>
-      <th scope="col">Completed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <% @resources.each do |res| %>
-      <td><%= res.title %></td>
-      <td><%= res.link %></td>
-      <td><input type="checkbox" value="completed"> </td>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
-</div>
+  <div class = "col-sm-8"
+  <h1> Resources </h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Link</th>
+        <th scope="col">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @resources.each do |res| %>
+        <td><%= res.title %></td>
+        <td><%= res.link %></td>
+        <td><input type="checkbox" value="completed"> </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
-<%= form_for(@resource) do |f| %>
-  Resource name: <%= f.text_field :title %>
-  <div class="row form-group">
-      <div class="col-sm-9">
-       <%= f.file_field :attachment_path, class: 'form-control' %>
+  <div class = "col-sm-4">
+    <% @attachments.each do |attachment| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to("#{attachment.name}", '/download/' + attachment.id.to_s) %>
+        </div>
       </div>
-      <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
-    </div>
-    <%= f.hidden_field :course_id %>
     <% end %>
-
-
- <% @attachments.each do |attachment| %>
- <div class="row">
-  <div class="col-sm-4"> </div>
-  <div class="col-sm-4">
- <%= link_to(attachment.attachment_path, '/download/' + attachment.id.to_s) %>
+  </div>
 </div>
-<div class="col-sm-4"> </div>
-</div>
- <% end %>
-
 
 <div class="row" style= "margin-top: 1vw;">
    <div class="col-sm-4"> </div>
@@ -62,6 +53,11 @@
      <%= form_for(@attachment) do |f| %>
       <div class="row form-group">
         <div class="col-sm-9">
+         <%= label_tag(:name, "Attachment title") %>
+         <%= f.text_field :name, class: 'form-control'%>
+        </div>
+        <div class="col-sm-9">
+         <%= label_tag(:attachment_path, "Upload file:") %>
          <%= f.file_field :attachment_path, class: 'form-control' %>
         </div>
         <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>

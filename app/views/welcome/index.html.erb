@@ -14,4 +14,45 @@
 
   </div>
 </div>
-  
+
+
+<div class="row" style="margin-top: 10%;"> 
+  <div class="col-sm-4"> </div>
+  <div class="col-sm-4">
+
+    <%= form_tag("/", method: "get") do %>
+      <%= label_tag(:keyword, "Search for:") %>
+      <%= text_field_tag(:keyword) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+</div>
+</div>
+
+
+<% if @keyword.blank? %>  
+  <% @courses.each do |course| %>
+
+    <div class="row"> 
+      <div class="col-sm-4"> </div>
+      <div class="col-sm-4">   <% course.name %></div>
+      <div class="col-sm-4"> </div>
+
+    </div>
+
+<% end %>
+
+<% else %>
+
+ <% @courses.each do |course| %>
+
+    <div class="row"> 
+      <div class="col-sm-4"> </div>
+      <div class="col-sm-4">   <%= link_to(course.name, "/courses/" + course.id.to_s + '/show') %></div>
+      <div class="col-sm-4"> </div>
+
+    </div>
+
+<% end %>
+
+<% end %>

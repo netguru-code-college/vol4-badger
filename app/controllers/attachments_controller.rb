@@ -19,7 +19,7 @@ class AttachmentsController < ApplicationController
   private
 
   def create_params
-    params.require(:attachment).permit(:attachment_path, :course_id)
+    params.require(:attachment).permit(:attachment_path, :course_id, :name)
   end
 
 
