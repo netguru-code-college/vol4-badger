@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :resources
   end
-  resources :categories
 
+  resources :categories
+  get 'courses/:id/show' => 'courses#show'
   devise_scope :student do
     root to: 'devise/sessions#new'
   end
