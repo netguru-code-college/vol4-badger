@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :students
-  resources :courses
+  resources :courses do
+    resources :resources
+  end
   resources :categories
 
   devise_scope :student do
