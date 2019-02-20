@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :students
   resources :courses  
-  resources :categories    
-  get 'courses/:id/show' => 'courses#show'  
+  resources :categories   
+  resources :attachments 
+  get 'courses/:id/show' => 'courses#show' 
+  get "/download/:id" => "attachments#download"
   devise_scope :student do
     root to: 'devise/sessions#new'
   end
