@@ -5,7 +5,11 @@ class CoursesController < ApplicationController
   end
 
   def show
- 
+    id = params[:id]
+    @course = Course.find(id)
+    @attachments = @course.attachments
+    @attachment = Attachment.new(course_id: id)    
+    @attachments = Attachment.all 
   end
 
   def new
