@@ -12,8 +12,6 @@ class CoursesController < ApplicationController
     @resource = Resource.new(course_id: id)
     @resources = @course.resources
     @students = @course.students
-
-
   end
 
   def new
@@ -27,6 +25,8 @@ class CoursesController < ApplicationController
       category_elements.push(category.id)
       @category_options.push(category_elements)
     end
+
+     1.times {@course.resources.build} 
   end
 
   def create
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
 
  private
   def create_params
-    params.require(:course).permit(:name, :description, :category_id, :resource_id)
+    params.require(:course).permit(:name, :description, :category_id, :resource_id, resources_attributes: [:title, :link, :completed, :course_id])
   end
 
 end

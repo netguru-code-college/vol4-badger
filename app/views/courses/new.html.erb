@@ -16,6 +16,26 @@
 
       <h3> Add course resources </h3>
 
+        <%= f.fields_for :resources do |resource_form| %>
+        
+        <div class="form-group">      
+          <%= resource_form.text_field :title, placeholder: "Title of resource", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= resource_form.text_field :link, placeholder: "Link to resource", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          Completed: <%= resource_form.radio_button :completed, true %> yes
+          <%= resource_form.radio_button :completed, false %> no
+
+         </div>
+
+          <%= resource_form.hidden_field :course_id %>
+      
+        <% end %>
+
       <div class="actions">
         <%= f.submit "Add course", class: "btn btn-success" %>
       </div>
