@@ -13,7 +13,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    @resource = Resource.new(params.require(:resource).permit(:title, :link, :completed, :type)
+    @resource = Resource.new(params.require(:resource).permit(:title, :link, :completed, :type))
 
     if @resource.save
       redirect_to @resource
