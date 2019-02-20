@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'student/show'
   devise_for :students
   resources :courses do
     resources :resources
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'student/:id/show' => 'student#show'
 end
