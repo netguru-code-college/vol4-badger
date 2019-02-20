@@ -1,16 +1,20 @@
 class CategoriesController < ApplicationController
    
    def index
+     @categories = Category.all
+   end
 
-    end
+   def show
+    
+   end
 
     def new
-        @category = Category.new
+      @category = Category.new
     end
 
     def create
-        category = Category.create(create_params)
-        redirect_to = "/categories/index"
+      category = Category.create(create_params)
+      redirect_to "/categories"
     end
 
     def edit
