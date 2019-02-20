@@ -1,32 +1,24 @@
+ <h1> Add new course details </h1> 
+
 
 <div class="row">
-  <div class="col-sm-4"> </div>
   <div class="col-sm-4">
-
-
     <%= form_for(@course) do |f| %>
-
        <div class="form-group">
         <%= f.select :category_id, @category_options, {}, class: "form-control" %> 
       </div>      
-
       <div class="form-group">
         <%= f.text_field :name, size: "20x1", placeholder: "Course name", autofocus: "on", class: "form-control" %> 
       </div>
-
       <div class="form-group">    
         <%= f.text_area :description, size: "20x3", placeholder: "Course description", class: "form-control" %>      
       </div>
 
+      <h3> Add course resources </h3>
+
       <div class="actions">
         <%= f.submit "Add course", class: "btn btn-success" %>
       </div>
-
     <% end %>
-
   </div>
-
-  <div class="col-sm-4"> </div>
 </div>
-
-

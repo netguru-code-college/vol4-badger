@@ -1,0 +1,10 @@
+<%= form_for(@resource) do |f| %>
+  Resource name: <%= f.text_field :title %>
+  <div class="row form-group">
+      <div class="col-sm-9">
+       <%= f.file_field :attachment_path, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
+    </div>
+    <%= f.hidden_field :course_id %>
+    <% end %>

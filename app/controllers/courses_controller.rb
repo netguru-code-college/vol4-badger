@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
 
   def show
     id = params[:id]
-    @course = Course.find(id)
+    @course = Course.find(params[:id])
     @attachments = @course.attachments
     @attachment = Attachment.new(course_id: id)
     @resource = Resource.new(course_id: id)
@@ -25,12 +25,11 @@ class CoursesController < ApplicationController
       category_elements.push(category.id)
       @category_options.push(category_elements)
     end
-
   end
 
   def create
     course = Course.create(create_params)
-    redirect_to "/courses/index"
+    redirect_to course_path(course)
   end
 
  private
