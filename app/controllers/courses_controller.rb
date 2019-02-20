@@ -9,8 +9,9 @@ class CoursesController < ApplicationController
     @course = Course.find(id)
     @attachments = @course.attachments
     @attachment = Attachment.new(course_id: id)
-    @attachments = Attachment.all
     @resource = Resource.new(course_id: id)
+    @resources = @course.resources
+
   end
 
   def new

@@ -1,66 +1,80 @@
+
+<div class="jumbotron">
+<h1 class="display-4"> <%= @course.name %> </h1>
+<p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by [author.username].</p>
+<hr class="my-4">
+<p>It uses <%= @course.description %> </p>
+<p class="lead">
+<a class="btn btn-primary btn-lg" href="#" role="button">Enroll</a>
+</p>
+</div>
+
+</div>
 <div class="row">
   <%= form_for(@resource) do |f| %>
     Resource name: <%= f.text_field :title %>
     href: <%= f.text_field :link %>
 
   <%= end  %>
+
+
+<div class="row">
+<h1> Resources </h1>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Link</th>
+      <th scope="col">Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @resources.each do |res| %>
+      <td><%= res.title %></td>
+      <td><%= res.link %></td>
+      <td><input type="checkbox" value="completed"> </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
 </div>
 
+<%= form_for(@resource) do |f| %>
+  Resource name: <%= f.text_field :title %>
   <div class="row form-group">
-
-
       <div class="col-sm-9">
        <%= f.file_field :attachment_path, class: 'form-control' %>
       </div>
-
       <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
-
     </div>
-
     <%= f.hidden_field :course_id %>
-
     <% end %>
 
 
  <% @attachments.each do |attachment| %>
-
  <div class="row">
-
   <div class="col-sm-4"> </div>
   <div class="col-sm-4">
-
  <%= link_to(attachment.attachment_path, '/download/' + attachment.id.to_s) %>
 </div>
 <div class="col-sm-4"> </div>
 </div>
-
  <% end %>
 
 
 <div class="row" style= "margin-top: 1vw;">
    <div class="col-sm-4"> </div>
    <div class="col-sm-4">
-
      <%= form_for(@attachment) do |f| %>
-
       <div class="row form-group">
-
         <div class="col-sm-9">
          <%= f.file_field :attachment_path, class: 'form-control' %>
         </div>
-
         <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
-
       </div>
-
       <%= f.hidden_field :course_id %>
-
       <% end %>
-
   </div>
-
   <div class="col-sm-4"> </div>
 </div>
-
-
-
