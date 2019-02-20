@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_084703) do
     t.datetime "updated_at", null: false
     t.integer "course_id"
     t.integer "student_id"
+    t.boolean "author"
   end
 
   create_table "courses", force: :cascade do |t|
