@@ -7,4 +7,9 @@ class Course < ApplicationRecord
   has_many :resources
   has_many :attachments
 
+  def author
+    course_students.find_by(author: true)&.student&.username
+  end
+
+
 end
