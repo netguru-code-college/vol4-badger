@@ -1,6 +1,10 @@
-<%= form_for(@resource) do |f| %>
-  Resource name: <%= f.text_field :title %>
+<div class="row">
+  <%= form_for(@resource) do |f| %>
+    Resource name: <%= f.text_field :title %>
+    href: <%= f.text_field :link %>
 
+  <%= end  %>
+</div>
 
   <div class="row form-group">
 
