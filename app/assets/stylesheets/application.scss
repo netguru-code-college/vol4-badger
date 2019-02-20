@@ -48,8 +48,21 @@ a:hover, a:focus {
 .logo {
   max-height: 300px;
   margin-bottom: 2rem;
+  transition: 1s;
   &:hover {
-    filter: drop-shadow(16px 16px 20px red) invert(75%);
+    filter: drop-shadow(16px 16px 20px red) invert(150%) blur(1px);
+    transform: scale(1.1);
+    transition: 1s;
+  }
+}
+
+nav .logo {
+  max-height: 30px;
+  transition: 1s;
+  margin-bottom: 3px;
+  filter: invert(100%);
+  &:hover {
+    filter: invert(100%);
   }
 }
   $bgDefault      : #222222;
