@@ -1,58 +1,44 @@
 
 <div class="row">
-  <div class="col-sm-1">  </div>
-  <div class="col-sm-7"> <%= link_to('sign_out', '/students/sign_out', method: :delete) %> </div>
-  <div class="col-sm-3"> 
-     
-     <div class="row">
-        <div class="col-sm-4"> <%= link_to('Index', '/categories', class:"btn btn-primary") %> </div>
-
-        <div class="col-sm-4"> <%= link_to('Login', '/students/sign_in', class: "btn btn-success") %></div>        
-        <div class="col-sm-4"> <%= link_to('Register', '/students/sign_up', class: "btn btn-success") %></div>
-     </div>
-  <div class="col-sm-1"> </div>
-
-  </div>
+  <%= image_tag("/badger.png", alt: "logo", class: 'logo') %>
 </div>
-
-
-<div class="row" style="margin-top: 10%;"> 
-  <div class="col-sm-4"> </div>
-  <div class="col-sm-4">
-
-    <%= form_tag("/", method: "get") do %>
-      <%= label_tag(:keyword, "Search for:") %>
-      <%= text_field_tag(:keyword) %>
-      <%= submit_tag("Search") %>
+<div class="row">
+    <%= form_tag("/", method: "get", class:'form-inline input-group input-group-lg') do %>
+      <div class="input-group-prepend">
+        <%= label_tag(:keyword, "Today I am a student of ", class:"input-group-text") %>
+      </div>
+      <%= text_field_tag(:keyword,"", class:'form-control', placeholder: '. . .') %>
+      <div class="input-group-append">
+        <%= submit_tag("GO!", class: 'btn btn-danger') %>
+      </div>
     <% end %>
-
-</div>
 </div>
 
 
-<% if @keyword.blank? %>  
+
+<% if @keyword.blank? %>
   <% @courses.each do |course| %>
 
-    <div class="row"> 
+    <div class="row">
       <div class="col-sm-4"> </div>
       <div class="col-sm-4">   <% course.name %></div>
       <div class="col-sm-4"> </div>
 
     </div>
 
-<% end %>
+  <% end %>
 
 <% else %>
 
  <% @courses.each do |course| %>
 
-    <div class="row"> 
-      <div class="col-sm-4"> </div>
-      <div class="col-sm-4">   <%= link_to(course.name, "/courses/" + course.id.to_s + '/show') %></div>
-      <div class="col-sm-4"> </div>
+  <div class="row">
+    <div class="col-sm-4"> </div>
+    <div class="col-sm-4">   <%= link_to(course.name, "/courses/" + course.id.to_s + '/show') %></div>
+    <div class="col-sm-4"> </div>
 
     </div>
 
-<% end %>
+  <% end %>
 
 <% end %>
