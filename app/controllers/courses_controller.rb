@@ -12,6 +12,8 @@ class CoursesController < ApplicationController
     @attachment = Attachment.new(course_id: id)
     @resource = Resource.new(course_id: id)
     @resources = @course.resources
+    @students = @course.students
+
 
   end
 

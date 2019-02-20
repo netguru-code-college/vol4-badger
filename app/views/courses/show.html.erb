@@ -1,7 +1,7 @@
 <div class="row">
   <div class="jumbotron">
     <h1 class="display-4"> <%= @course.name %> </h1>
-    <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by [author.username].</p>
+    <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by <%= @course.author %>.</p>
     <hr class="my-4">
     <p>It uses <%= @course.description %> </p>
     <p class="lead">
