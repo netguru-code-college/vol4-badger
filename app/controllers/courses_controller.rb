@@ -2,7 +2,6 @@ class CoursesController < ApplicationController
 
   def index
     @categories = Category.all
-    # @courses = Course.all
   end
 
   def show
