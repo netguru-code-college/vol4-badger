@@ -8,9 +8,10 @@ class CoursesController < ApplicationController
     id = params[:id]
     @course = Course.find(id)
     @attachments = @course.attachments
-    @attachment = Attachment.new(course_id: id)    
-    @attachments = Attachment.all 
+    @attachment = Attachment.new(course_id: id)
+    @resource = Resource.new(course_id: id)
     @resources = @course.resources
+
   end
 
   def new
@@ -21,8 +22,8 @@ class CoursesController < ApplicationController
     @categories.all.each do |category|
       category_elements = []
       category_elements.push(category.name)
-      category_elements.push(category.id)     
-      @category_options.push(category_elements)      
+      category_elements.push(category.id)
+      @category_options.push(category_elements)
     end
 
   end
@@ -32,9 +33,9 @@ class CoursesController < ApplicationController
     redirect_to "/courses/index"
   end
 
- private 
+ private
   def create_params
-    params.require(:course).permit(:name, :description, :category_id, :resource_id) 
+    params.require(:course).permit(:name, :description, :category_id, :resource_id)
   end
 
 end
