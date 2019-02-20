@@ -6,4 +6,6 @@ class Course < ApplicationRecord
 
   has_many :resources
   has_many :attachments
+
+  accept_nested_attributes_for :resources, allow_destroy :true
 end
