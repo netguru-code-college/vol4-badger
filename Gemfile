@@ -70,3 +70,5 @@ gem 'bootstrap', '~> 4.3.1'
 # add devise authentication
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
+
+gem 'rubocop', require: false
