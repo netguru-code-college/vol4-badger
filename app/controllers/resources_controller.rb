@@ -1,4 +1,6 @@
 class ResourcesController < ApplicationController
+before_action :authenticate_student!, :except => [:show, :index]
+
 
   def index
     @resources = Resource.where(course_id: params[:course_id])

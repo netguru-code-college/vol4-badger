@@ -1,0 +1,21 @@
+
+<div class="row" style= "margin-top: 1vw;">
+   <div class="col-sm-4"> </div>
+   <div class="col-sm-4">
+     <%= form_for(@attachment) do |f| %>
+      <div class="row form-group">
+        <div class="col-sm-9">
+         <%= label_tag(:name, "Attachment title") %>
+         <%= f.text_field :name, class: 'form-control'%>
+        </div>
+        <div class="col-sm-9">
+         <%= label_tag(:attachment_path, "Upload file:") %>
+         <%= f.file_field :attachment_path, class: 'form-control' %>
+        </div>
+        <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
+      </div>
+      <%= f.hidden_field :course_id %>
+      <% end %>
+  </div>
+  <div class="col-sm-4"> </div>
+</div>

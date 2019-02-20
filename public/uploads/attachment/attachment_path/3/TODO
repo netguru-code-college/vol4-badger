@@ -1,0 +1,29 @@
+r1 = Resource.new({title: "Introduction to constructions", completed: false, course_id: 2})
+
+TO DO
+Attatchment name 
+Wyswietlac name zamiast linku
+Attatchment index table
+
+
+Dynamic table to add resources // how to add multiple resources on one course new/edit
+
+
+W Modelu sa methods added by belongs_to
+course.attachment.bulild
+
+
+
+
+  def author
+    course_students.find_by(author: true)&.student
+
+w Chainie jak jakis etap spodziewamy sie ze moze zwrocic nil &
+Aka try ale nie nadużywać
+
+
+custom validator for relation
+validate that an object. ... <slack>
+
+Routing article in guides rubyonrails
+
