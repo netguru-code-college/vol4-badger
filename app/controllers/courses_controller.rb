@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
     @attachments = @course.attachments
     @attachment = Attachment.new(course_id: id)    
     @attachments = Attachment.all 
+    @resources = @course.resources
   end
 
   def new

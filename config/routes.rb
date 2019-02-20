@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :attachments 
   get 'courses/:id/show' => 'courses#show' 
   get "/download/:id" => "attachments#download"
-  devise_scope :student do
-    root to: 'devise/sessions#new'
-  end
+
+
+  root to: 'categories#index'
+
 end
