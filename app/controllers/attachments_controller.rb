@@ -12,7 +12,8 @@ class AttachmentsController < ApplicationController
   end
 
   def download
-
+    attachment_path = Attachment.find(params[:id]).attachment_path.path    
+    send_file(attachment_path)
   end
 
   private

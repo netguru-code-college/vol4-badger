@@ -1,5 +1,20 @@
 
-<div class="row">
+ <% @attachments.each do |attachment| %>
+
+ <div class="row">
+
+  <div class="col-sm-4"> </div>
+  <div class="col-sm-4"> 
+
+ <%= link_to(attachment.attachment_path, '/download/' + attachment.id.to_s) %>
+</div>
+<div class="col-sm-4"> </div>
+</div>
+
+ <% end %>
+
+
+<div class="row" style= "margin-top: 1vw;">
    <div class="col-sm-4"> </div>
    <div class="col-sm-4">
 
@@ -7,8 +22,7 @@
 
       <div class="row form-group">
 
-        <div class="col-sm-2">  <!-- Attachment: --> </div>
-        <div class="col-sm-7">
+        <div class="col-sm-9">
          <%= f.file_field :attachment_path, class: 'form-control' %>
         </div>
 
@@ -24,3 +38,6 @@
 
   <div class="col-sm-4"> </div>
 </div>
+
+
+

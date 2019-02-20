@@ -8,7 +8,8 @@ class CoursesController < ApplicationController
     id = params[:id]
     @course = Course.find(id)
     @attachments = @course.attachments
-    @attachment = Attachment.new(course_id: id)     
+    @attachment = Attachment.new(course_id: id)    
+    @attachments = Attachment.all 
   end
 
   def new
