@@ -6,19 +6,17 @@ class ResourcesController < ApplicationController
 
   def show
     @resource = Resource.find(params[:id])
-  end
-
-  def new
-    @resource = Resource.new
+    @attachment = Resource.new(course_id: id)
   end
 
   def create
     @resource = Resource.new(params.require(:resource).permit(:title, :link, :completed, :type))
+    @course_id = @resource.course_id
 
     if @resource.save
-      redirect_to @resource
+      redirect_to '/courses'+@course_id.to_s+'/show'
     else
-      render 'new'
+      render :new
     end
   end
 
