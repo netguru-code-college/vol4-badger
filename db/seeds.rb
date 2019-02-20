@@ -6,33 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Course.create({name: "Matematyka Stosowana", description: "to jest opis kursu", category_id: 1})
-# Course.create({name: "Medycyna pracy", description: "to jest opis kursu", category_id: 2})
-# Course.create({name: "Biologia molekularna", description: "to jest opis kursu", category_id: 3})
-
-# Category.create({name: "Matematyka"})
-# Category.create({name: "Medycyna"})
-# Category.create({name: "Biologia"})
-
-# Category.create({name: "Biologia"})
-# Category.create({name: "Chemia"})
-# Category.create({name: "Filologia polska"})
-# Category.create({name: "Fizyka"})
-# Category.create({name: "Historia"})
-# Category.create({name: "Matematyka"})
-# Category.create({name: "Informatyka"})
-# Category.create({name: "Geografia"})
-# Category.create({name: "Nauki polityczne"})
-# Category.create({name: "Nauki społeczne"})
-# Category.create({name: "Neofilologia"})
-# Category.create({name: "Prawo i administracja"})
-# Category.create({name: "Teologia"})
-
-# Course.create({name: "Matematyka Stosowana", description: "to jest opis kursu"})
-# Course.create({name: "Medycyna pracy", description: "to jest opis kursu"})
-# Course.create({name: "Biologia molekularna", description: "to jest opis kursu"})
-
-
 architecture_category = Category.create({name: "Architecture"})
 Course.create({category_id: architecture_category.id, name: "Architecture", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
 Course.create({category_id: architecture_category.id, name: "History of Art", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
@@ -85,4 +58,10 @@ Course.create({category_id: biology_category.id, name: "Physiology", description
 Course.create({category_id: biology_category.id, name: "Psychology", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
 Course.create({category_id: biology_category.id, name: "Zoology", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
 
-
+student1 = Student.create({email: "test1@wp.pl", password: "password1"})
+student2 = Student.create({email: "test2@wp.pl", password: "password2"})
+cat1 = Category.create({name: "Technology"})
+crs1 = Course.create({name:"Robotics basic", description: "Course description robots, machines", category_id: cat1.id})
+crs2 = Course.create({name:"Robotics advanced", description: "Course description robots, machines", category_id: cat1.id})
+CourseStudent.create({course_id: crs1.id, student_id: student2.id, author: false})
+StudentCategory.create({category_id: cat1.id, student_id: student2.id})

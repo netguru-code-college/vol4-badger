@@ -1,4 +1,7 @@
 class StudentCategory < ApplicationRecord
-  has_one :category
-  has_one :student
+  belongs_to :category
+  belongs_to :student
+
+  validates :student_id, presence: true
+  validates :category_id, presence: true
 end
