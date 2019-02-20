@@ -5,5 +5,5 @@ class Course < ApplicationRecord
   has_many :students, through: :course_students
 
   has_many :resources
-
+  has_many :attachments
 end
