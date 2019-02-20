@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :attachments
-  get "/download/:id" => "attachments#download"
+  get '/download/:id' => 'attachments#download'
 
   root 'welcome#index'
 
+  resources :course_students, only: [:destroy]
   post 'enroll' => 'course_students#create'
+  get 'my_courses' => 'course_students#index'
 
 end

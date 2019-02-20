@@ -12,5 +12,11 @@ class Course < ApplicationRecord
     course_students.find_by(author: true)&.student&.username
   end
 
+  def enrolled?(student)
+  	CourseStudent.where(student: student, course: self).exists?
+#    @course = Course.find(params[:id])
+#    @my_courses = current_student.courses 
+#    return @my_courses.find_by(course: @course).present?
+  end
 
 end
