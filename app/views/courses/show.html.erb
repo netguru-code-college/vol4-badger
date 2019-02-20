@@ -5,7 +5,9 @@
     <hr class="my-4">
     <p>It uses <%= @course.description %> </p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Enroll</a>
+      <%= link_to "Enroll", 
+                        enroll_path(id: @course),
+                          class: "btn btn-xs btn-success", method: :post %>
     </p>
   </div>
 </div>
