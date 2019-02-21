@@ -34,6 +34,7 @@ class CoursesController < ApplicationController
     redirect_to course_path(course)
   end
 
+
  private
   def create_params
     params.require(:course).permit(:name, :description, :category_id, :resource_id, resources_attributes: [:title, :link, :completed, :course_id])

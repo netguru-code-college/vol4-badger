@@ -10,30 +10,8 @@
   </head>
 
   <body>
-  <nav class="navbar">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      <a href="/" class="navbar-brand">
-        <%= image_tag("/badger.png", alt: "logo", class: 'logo') %>
-        Badgr
-      </a>
 
-      </div>
-
-      <ul class="nav navbar-nav navbar-left">
-        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete, class: 'nav-link') %></li>
-      </ul>
-      <ul class="nav navbar-right justify-content-around">
-        <li class="nav-item">
-          <%= link_to('Index', '/categories', class: 'nav-link') %>
-        </li>
-        <li class="nav-item">
-          <%= link_to('Login', '/students/sign_in', class: 'nav-link') %></li>
-        <li class="nav-item">
-          <%= link_to('Register', '/students/sign_up', class: 'nav-link') %></li>
-      </ul>
-    </div>
-  </nav>
+  <%= render "layouts/navigation" %>
 
   <main>
     <div class="container">
