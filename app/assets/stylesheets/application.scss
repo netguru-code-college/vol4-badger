@@ -193,6 +193,12 @@ footer {
 table.categories {
  margin-top: 1rem;
  min-width: 50vw;
+ .category_name {
+   color: rgb(34, 85, 117);
+  &:after {
+    content: '▼';
+  }
+ }
  .display_course td {
    display: block;
    margin-left: 3rem;
@@ -208,7 +214,7 @@ table.categories {
        font-style: italic;
        &:after {
          content: "  ▶️";
-       }
-     }
-   }
- }
+      }
+    }
+  }
+}
