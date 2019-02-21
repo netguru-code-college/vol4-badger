@@ -24,22 +24,22 @@
   }
 
   body {
-    height: 100vh;
-  }
-  body main {
-    height: 100%;
-    background-color: rgb(238, 233, 233);
+    min-height: 100vh;
+    main {
+        height: 100%;
+        background-color: rgb(238, 233, 233);
+      }
   }
 
-  a {
-    color: rgb(209, 212, 214);
-    text-decoration: none;
-}
+  main>.container {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-a:hover, a:focus {
-    color: rgb(143, 145, 146);
-    text-decoration: none;
-}
 
 /*
   NAVBAR
@@ -70,6 +70,7 @@ nav .logo {
   $colDefault     : #c7c7c7;
   $colHighlight   : #f7f2f2;
   $dropDown       : false;
+
   .navbar {
     position: absolute;
     width: 100%;
@@ -82,21 +83,26 @@ nav .logo {
         color: $colHighlight;
         text-shadow: 17px 17px 1px  rgb(219, 221, 248), -17px -17px 1px  rgb(255, 195, 195);
         transition: 1s;
-      }}
+      }
+    }
     .navbar-text {
       color: $colDefault;
       a {
         color: $colHighlight;
         &:hover, &:focus {
-          color: $colHighlight; }}}
-    .navbar-nav {
-      .nav-link {
-        color: $colDefault;
-        border-radius: .25rem;
-        margin: 0 0.25em;
-        &:not(.disabled) {
-          &:hover, &:focus {
-            color: $colHighlight; }}}
+          color: $colHighlight;
+        }
+      }
+    }
+    .nav-link {
+      color: $colDefault;
+      border-radius: .25rem;
+      margin: 0 0.25em;
+      &:not(.disabled) {
+        &:hover, &:focus {
+          color: $colHighlight;
+        }
+      }
       .nav-item.active, .nav-item.show {
         .nav-link, .nav-link:hover, .nav-link:focus {
           color: $colHighlight;
@@ -159,16 +165,7 @@ nav .logo {
       color: $colHighlight;
       background-color: $bgHighlight; }}
 
-main>.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
 footer {
-  position: absolute;
   width: 100%;
   bottom: 0;
   display: flex;
@@ -185,3 +182,26 @@ footer {
     color: $colHighlight;
   }
 }
+
+table.categories {
+  margin-top: 1rem;
+  min-width: 50vw;
+  .display_course td {
+    display: block;
+    margin-left: 3rem;
+    a {
+      color: #000;
+      transition: .3s;
+    }
+    &:hover a {
+        text-decoration: none;
+        color: red;
+        margin: 3px;
+        transition: .3s;
+        font-style: italic;
+        &:after {
+          content: "  ▶️";
+        }
+      }
+    }
+  }
