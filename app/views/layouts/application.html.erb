@@ -21,12 +21,16 @@
       </div>
 
       <ul class="nav navbar-nav navbar-left">
-        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete) %></li>
+        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete, class: 'nav-link') %></li>
       </ul>
-      <ul class="nav navbar-right col-3 justify-content-around">
-        <li> <%= link_to('Index', '/categories') %></li>
-        <li> <%= link_to('Login', '/students/sign_in') %></li>
-        <li> <%= link_to('Register', '/students/sign_up') %></li>
+      <ul class="nav navbar-right justify-content-around">
+        <li class="nav-item">
+          <%= link_to('Index', '/categories', class: 'nav-link') %>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Login', '/students/sign_in', class: 'nav-link') %></li>
+        <li class="nav-item">
+          <%= link_to('Register', '/students/sign_up', class: 'nav-link') %></li>
       </ul>
     </div>
   </nav>

@@ -1,40 +1,28 @@
 
-<div class="row"> 
-<div class="col-sm-4"> </div>
-<div class="col-sm-4">
-
-  <h2> Categories </h2>
+<h2> Categories </h2>
+<div class="row">
+  <table class="table categories col-12">
 
   <% @categories.each do |category| %>
 
-     <div class="row category_name">
-        <div class="col-sm-12">
-        <%= category.name %>
-        </div>
-     </div>
+    <tr class="category_name  ">
+      <td><%= category.name %></td>
+    </tr>
 
-    <div class="display_course hidden">
-
+    <tr class="display_course hidden">
       <% category.courses.each do |course| %>
-
-          <div class="row" style="margin-left: 1vw;">
-            <div class="col-sm-12">
-            <%= link_to(course.name, "courses/" + course.id.to_s + "/show")%>
-            </div>
-          </div>
-
+          <td>
+              <%= link_to(course.name, "courses/" + course.id.to_s + "/show")%>
+          </td>
       <% end %>
-
-    </div>
+    </tr>
 
   <% end %>
 
-  </div>
-
-<div class="col-sm-4"> </div>
-
+  </table>
 </div>
 
 
-   
+
+
 
