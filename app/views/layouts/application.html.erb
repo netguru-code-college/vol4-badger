@@ -10,8 +10,36 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a href="/" class="navbar-brand">
+        <%= image_tag("/badger.png", alt: "logo", class: 'logo') %>
+        Badgr
+      </a>
+
+      </div>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete) %></li>
+      </ul>
+      <ul class="nav navbar-right col-3 justify-content-around">
+        <li> <%= link_to('Index', '/categories') %></li>
+        <li> <%= link_to('Login', '/students/sign_in') %></li>
+        <li> <%= link_to('Register', '/students/sign_up') %></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
+
+  <footer>
+    <span> Made with <span class="heart"><a href="http://www.youtube.com/watch_popup?v=4r7wHMg5Yjg" target="_blank">♥</a></span> by <%= link_to("the Badgr Team", "https://github.com/netguru-code-college/vol4-badger/")%> © <%= Date.today.year %> </span>
+  </footer>
+
   </body>
 </html>
