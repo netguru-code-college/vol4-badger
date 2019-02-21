@@ -165,13 +165,20 @@ nav .logo {
       color: $colHighlight;
       background-color: $bgHighlight; }}
 
+/*
+
+  Footer
+
+*/
+
 footer {
-  width: 100%;
+  position: absolute;
   bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   background-color: $bgDefault;
   color: $colDefault;
   min-height: 50px;
