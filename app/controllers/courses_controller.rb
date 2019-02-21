@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
       @category_options.push(category_elements)
     end
 
-     @course.resources.build
+     3.times {@course.resources.build}
   end
 
   def create
