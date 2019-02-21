@@ -6,9 +6,9 @@
       Badgr
       </a>
     </div>
-
-    <ul class="nav navbar-right col-3 justify-content-around">
+    <ul class="nav navbar-right justify-content-around">
       <li class="nav-item"> <%= link_to('Explore', '/categories', class: "nav-link") %></li>
+
       <% if student_signed_in? %>
         <li class="nav-item"> <%= link_to('Dashboard', my_courses_path, class: "nav-link") %></li>
         <li class="nav-item"> <%= link_to('Sign Out', '/students/sign_out', method: :delete, class: "nav-link") %></li>
