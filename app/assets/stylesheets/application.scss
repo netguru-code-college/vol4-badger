@@ -193,6 +193,18 @@ footer {
 table.categories {
  margin-top: 1rem;
  min-width: 50vw;
+ .category_name {
+  transition: .3s;
+   &:after {
+     content: "▼";
+   }
+   &:hover td{
+     color: rgb(14, 67, 158);
+     font-style: italic;
+     margin-left: 20px;
+     transition: .3s;
+   }
+ }
  .display_course td {
    display: block;
    margin-left: 3rem;
