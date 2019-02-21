@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+before_action :authenticate_student!, :except => [:show, :index]
 
   def index
     @categories = Category.all
