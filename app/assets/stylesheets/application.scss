@@ -15,200 +15,200 @@
  *= require_self
  */
 
-  @import "bootstrap";
+ @import "bootstrap";
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
 
-  body {
-    min-height: 100vh;
-    main {
-        height: 100%;
-        background-color: rgb(238, 233, 233);
-      }
-  }
+ body {
+   min-height: 100vh;
+   main {
+       height: 100%;
+       background-color: rgb(238, 233, 233);
+     }
+ }
 
-  main>.container {
-    padding: 5rem 2rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+ main>.container {
+   padding: 5rem 2rem;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
 
 
 /*
-  NAVBAR
+ NAVBAR
 */
 
 .logo {
-  max-height: 300px;
-  margin-bottom: 2rem;
-  transition: 1s;
-  &:hover {
-    filter: drop-shadow(16px 16px 20px red) invert(150%) blur(1px);
-    transform: scale(1.1);
-    transition: 1s;
-  }
+ max-height: 300px;
+ margin-bottom: 2rem;
+ transition: 1s;
+ &:hover {
+   filter: drop-shadow(16px 16px 20px red) invert(150%) blur(1px);
+   transform: scale(1.1);
+   transition: 1s;
+ }
 }
 
 nav .logo {
-  max-height: 30px;
-  transition: 1s;
-  margin-bottom: 3px;
-  filter: invert(100%);
-  &:hover {
-    filter: invert(100%);
-  }
+ max-height: 30px;
+ transition: 1s;
+ margin-bottom: 3px;
+ filter: invert(100%);
+ &:hover {
+   filter: invert(100%);
+ }
 }
-  $bgDefault      : #222222;
-  $bgHighlight    : #808080;
-  $colDefault     : #c7c7c7;
-  $colHighlight   : #f7f2f2;
-  $dropDown       : false;
+ $bgDefault      : #222222;
+ $bgHighlight    : #808080;
+ $colDefault     : #c7c7c7;
+ $colHighlight   : #f7f2f2;
+ $dropDown       : false;
 
-  .navbar {
-    position: absolute;
-    width: 100%;
-    background-color: $bgDefault;
-    .navbar-brand {
-      color: $colHighlight;
-      text-transform: uppercase;
-      transition: 1s;
-      &:hover, &:focus {
-        color: $colHighlight;
-        text-shadow: 17px 17px 1px  rgb(219, 221, 248), -17px -17px 1px  rgb(255, 195, 195);
-        transition: 1s;
-      }
-    }
-    .navbar-text {
-      color: $colDefault;
-      a {
-        color: $colHighlight;
-        &:hover, &:focus {
-          color: $colHighlight;
-        }
-      }
-    }
-    .nav-link {
-      color: $colDefault;
-      border-radius: .25rem;
-      margin: 0 0.25em;
-      &:not(.disabled) {
-        &:hover, &:focus {
-          color: $colHighlight;
-        }
-      }
-      .nav-item.active, .nav-item.show {
-        .nav-link, .nav-link:hover, .nav-link:focus {
-          color: $colHighlight;
-          background-color: $bgHighlight; }}}
-    .navbar-toggle {
-      border-color: $bgHighlight;
-      &:hover, &:focus {
-        background-color: $bgHighlight; }
-      .navbar-toggler-icon {
-        color: $colDefault; }}
-    .navbar-collapse,
-    .navbar-form {
-      border-color: $colDefault; }
-    .navbar-link {
-      color: $colDefault;
-      &:hover {
-        color: $colHighlight; }}}
-  @media (max-width: 575px) {
-    .navbar-expend-sm .navbar-nav .show .dropdown-menu {
-      .dropdown-item {
-        color: $colDefault;
-        &:hover, &:focus {
-          color: $colHighlight; }}
-      .dropdown-item.active {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  @media (max-width: 767px) {
-    .navbar-expend-md .navbar-nav .show .dropdown-menu {
-      .dropdown-item {
-        color: $colDefault;
-        &:hover, &:focus {
-          color: $colHighlight; }}
-      .dropdown-item.active {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  @media (max-width: 991px) {
-    .navbar-expend-lg .navbar-nav .show .dropdown-menu {
-      .dropdown-item {
-        color: $colDefault;
-        &:hover, &:focus {
-          color: $colHighlight; }}
-      .dropdown-item.active {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  @media (max-width: 1199px) {
-    .navbar-expend-xl .navbar-nav .show .dropdown-menu {
-      .dropdown-item {
-        color: $colDefault;
-        &:hover, &:focus {
-          color: $colHighlight; }}
-      .dropdown-item.active {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  .navbar-expend .navbar-nav .show .dropdown-menu {
-    .dropdown-item {
-      color: $colDefault;
-      &:hover, &:focus {
-        color: $colHighlight; }}
-    .dropdown-item.active {
-      color: $colHighlight;
-      background-color: $bgHighlight; }}
+ .navbar {
+   position: absolute;
+   width: 100%;
+   background-color: $bgDefault;
+   .navbar-brand {
+     color: $colHighlight;
+     text-transform: uppercase;
+     transition: 1s;
+     &:hover, &:focus {
+       color: $colHighlight;
+       text-shadow: 17px 17px 1px  rgb(219, 221, 248), -17px -17px 1px  rgb(255, 195, 195);
+       transition: 1s;
+     }
+   }
+   .navbar-text {
+     color: $colDefault;
+     a {
+       color: $colHighlight;
+       &:hover, &:focus {
+         color: $colHighlight;
+       }
+     }
+   }
+   .nav-link {
+     color: $colDefault;
+     border-radius: .25rem;
+     margin: 0 0.25em;
+     &:not(.disabled) {
+       &:hover, &:focus {
+         color: $colHighlight;
+       }
+     }
+     .nav-item.active, .nav-item.show {
+       .nav-link, .nav-link:hover, .nav-link:focus {
+         color: $colHighlight;
+         background-color: $bgHighlight; }}}
+   .navbar-toggle {
+     border-color: $bgHighlight;
+     &:hover, &:focus {
+       background-color: $bgHighlight; }
+     .navbar-toggler-icon {
+       color: $colDefault; }}
+   .navbar-collapse,
+   .navbar-form {
+     border-color: $colDefault; }
+   .navbar-link {
+     color: $colDefault;
+     &:hover {
+       color: $colHighlight; }}}
+ @media (max-width: 575px) {
+   .navbar-expend-sm .navbar-nav .show .dropdown-menu {
+     .dropdown-item {
+       color: $colDefault;
+       &:hover, &:focus {
+         color: $colHighlight; }}
+     .dropdown-item.active {
+       color: $colHighlight;
+       background-color: $bgHighlight; }}}
+ @media (max-width: 767px) {
+   .navbar-expend-md .navbar-nav .show .dropdown-menu {
+     .dropdown-item {
+       color: $colDefault;
+       &:hover, &:focus {
+         color: $colHighlight; }}
+     .dropdown-item.active {
+       color: $colHighlight;
+       background-color: $bgHighlight; }}}
+ @media (max-width: 991px) {
+   .navbar-expend-lg .navbar-nav .show .dropdown-menu {
+     .dropdown-item {
+       color: $colDefault;
+       &:hover, &:focus {
+         color: $colHighlight; }}
+     .dropdown-item.active {
+       color: $colHighlight;
+       background-color: $bgHighlight; }}}
+ @media (max-width: 1199px) {
+   .navbar-expend-xl .navbar-nav .show .dropdown-menu {
+     .dropdown-item {
+       color: $colDefault;
+       &:hover, &:focus {
+         color: $colHighlight; }}
+     .dropdown-item.active {
+       color: $colHighlight;
+       background-color: $bgHighlight; }}}
+ .navbar-expend .navbar-nav .show .dropdown-menu {
+   .dropdown-item {
+     color: $colDefault;
+     &:hover, &:focus {
+       color: $colHighlight; }}
+   .dropdown-item.active {
+     color: $colHighlight;
+     background-color: $bgHighlight; }}
 
 /*
 
-  Footer
+ Footer
 
 */
 
 footer {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-color: $bgDefault;
-  color: $colDefault;
-  min-height: 50px;
-  .heart a {
-    color: #dc3545;
-  }
-  a {
-    color: $colHighlight;
-  }
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ background-color: $bgDefault;
+ color: $colDefault;
+ min-height: 50px;
+ margin-top: -50px;
+ .heart a {
+   color: #dc3545;
+ }
+ a {
+   color: $colHighlight;
+ }
 }
 
 table.categories {
-  margin-top: 1rem;
-  min-width: 50vw;
-  .display_course td {
-    display: block;
-    margin-left: 3rem;
-    a {
-      color: #000;
-      transition: .3s;
-    }
-    &:hover a {
-        text-decoration: none;
-        color: red;
-        margin: 3px;
-        transition: .3s;
-        font-style: italic;
-        &:after {
-          content: "  ▶️";
-        }
-      }
-    }
-  }
+ margin-top: 1rem;
+ min-width: 50vw;
+ .display_course td {
+   display: block;
+   margin-left: 3rem;
+   a {
+     color: #000;
+     transition: .3s;
+   }
+   &:hover a {
+       text-decoration: none;
+       color: red;
+       margin: 3px;
+       transition: .3s;
+       font-style: italic;
+       &:after {
+         content: "  ▶️";
+       }
+     }
+   }
+ }
