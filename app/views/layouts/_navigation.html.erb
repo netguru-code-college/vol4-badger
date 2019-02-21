@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">
+      <%= image_tag("/badger.png", alt: "logo", class: 'logo') %>
+      Badgr
+      </a>
+    </div>
+
+    <ul class="nav navbar-right col-3 justify-content-around">
+      <li> <%= link_to('Explore', '/categories') %></li>
+      <% if student_signed_in? %>
+        <li> <%= link_to('Dashboard', my_courses_path) %></li>
+        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete) %></li>
+      <% else %>
+        <li> <%= link_to('Login', '/students/sign_in') %></li>
+        <li> <%= link_to('Register', '/students/sign_up') %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

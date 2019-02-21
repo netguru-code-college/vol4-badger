@@ -18,12 +18,10 @@
 
 <% if @keyword.blank? %>
   <% @courses.each do |course| %>
-
     <div class="row">
       <div class="col-sm-4"> </div>
       <div class="col-sm-4">   <% course.name %></div>
       <div class="col-sm-4"> </div>
-
     </div>
 
   <% end %>
