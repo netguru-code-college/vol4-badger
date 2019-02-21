@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   post 'enroll' => 'course_students#create'
 
+  get match "*path", to: "welcome#index", via: :all
+
 end
