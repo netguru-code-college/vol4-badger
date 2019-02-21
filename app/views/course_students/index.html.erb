@@ -1,14 +1,18 @@
 <h1> Welcome to your dashboard <%=current_student.email%>! </h1>
 
 <div class="row">
-	<div class="container col-sm-6">
+	<div class="container col-sm-12">
 	  <h2> Continue learning:</h2>
+	  <div class = well >
 	  <% @my_courses.each do |course| %>
 	    <%= link_to course.name, course_path(course) %> 
-        <%= link_to "Leave course", course_student_path(course), class: "btn btn-xs btn-danger", method: :delete %>
+        <%= link_to "Leave course", course_student_path(course), class: "btn btn-xs btn-danger", method: :delete %> <br>
 	  <% end %>
 	</div>
+	</div>
 </div>
+<br>
+<br>
 
 <div class = "row">
  	<%= link_to'Add a course', '/courses/new' , class: "btn btn-lg btn-success" %>
