@@ -1,13 +1,13 @@
 <div class="row">
   <div class="jumbotron">
     <h1 class="display-4"> <%= @course.name %> </h1>
-    <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name], submited by <%= @course.author %>.</p>
+ <!--   <p class="lead">This is a curriculum of a course taughted at [university_name] by [profesor_name].</p> -->
     <hr class="my-4">
-    <p>It uses <%= @course.description %> </p>
+    <p><%= @course.description %> </p>
     <p class="lead">  
-    <% if @course.enrolled?(current_student) %>  
+    <% if @course.enrolled?(current_student)  %>  
       <%= link_to "Leave course", course_student_path(@course), class: "btn btn-xs btn-danger", method: :delete %>
-    <% else %>
+    <% elsif student_signed_in? %>
       <%= link_to "Enroll", enroll_path(id: @course), class: "btn btn-xs btn-success", method: :post %>
     <% end %>                    
     </p>
@@ -23,17 +23,21 @@
       <tr>
         <th scope="col">Title</th>
         <th scope="col">Link</th>
-        <th scope="col">Completed</th>
+        <% if student_signed_in? && @course.enrolled?(current_student)%>
+          <th scope="col">Completed</th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
    
-        <% @resources.each do |res| %>
+    <% @resources.each do |res| %>
       <tr>
         <td><%= res.title %></td>
         <td><%= res.link %></td>
-        <td><input type="checkbox" value="completed"> </td>
-        <% end %>        
+        <% if student_signed_in? && @course.enrolled?(current_student)%>
+          <td><input type="checkbox" value="completed"> </td>
+        <% end %>
+    <% end %>        
       </tr>
     </tbody>
   </table>
@@ -50,23 +54,6 @@
   </div>
 </div>
 
-<div class="row" style= "margin-top: 1vw;">
-   <div class="col-sm-4"> </div>
-   <div class="col-sm-4">
-     <%= form_for(@attachment) do |f| %>
-      <div class="row form-group">
-        <div class="col-sm-9">
-         <%= label_tag(:name, "Attachment title") %>
-         <%= f.text_field :name, class: 'form-control'%>
-        </div>
-        <div class="col-sm-9">
-         <%= label_tag(:attachment_path, "Upload file:") %>
-         <%= f.file_field :attachment_path, class: 'form-control' %>
-        </div>
-        <div class="col-sm-3"> <%= f.submit "Add attachment", class: 'btn btn-success' %> </div>
-      </div>
-      <%= f.hidden_field :course_id %>
-      <% end %>
-  </div>
-  <div class="col-sm-4"> </div>
-</div>
+<% if student_signed_in? %>
+<%= render 'courses/attachment' %>
+<% end %> 

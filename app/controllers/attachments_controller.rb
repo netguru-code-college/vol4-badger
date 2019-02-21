@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+before_action :authenticate_student!, :except => [:download]
 
   def create
     @attachment = Attachment.create(create_params)

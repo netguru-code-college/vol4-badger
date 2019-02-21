@@ -14,9 +14,6 @@ class Course < ApplicationRecord
 
   def enrolled?(student)
   	CourseStudent.where(student: student, course: self).exists?
-#    @course = Course.find(params[:id])
-#    @my_courses = current_student.courses 
-#    return @my_courses.find_by(course: @course).present?
   end
 
 end
