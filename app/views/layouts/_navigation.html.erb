@@ -8,13 +8,13 @@
     </div>
 
     <ul class="nav navbar-right col-3 justify-content-around">
-      <li> <%= link_to('Explore', '/categories') %></li>
+      <li> <%= link_to('Explore', '/categories', class: "nav-link") %></li>
       <% if student_signed_in? %>
-        <li> <%= link_to('Dashboard', my_courses_path) %></li>
-        <li> <%= link_to('Sign Out', '/students/sign_out', method: :delete) %></li>
+        <li class="nav-item"> <%= link_to('Dashboard', my_courses_path, class: "nav-link") %></li>
+        <li class="nav-item"> <%= link_to('Sign Out', '/students/sign_out', method: :delete, class: "nav-link") %></li>
       <% else %>
-        <li> <%= link_to('Login', '/students/sign_in') %></li>
-        <li> <%= link_to('Register', '/students/sign_up') %></li>
+        <li class="nav-item"> <%= link_to('Login', '/students/sign_in', class: "nav-link") %></li>
+        <li class="nav-item"> <%= link_to('Register', '/students/sign_up', class: "nav-link") %></li>
       <% end %>
     </ul>
   </div>
