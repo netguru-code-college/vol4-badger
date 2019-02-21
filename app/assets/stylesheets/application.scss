@@ -172,22 +172,22 @@ nav .logo {
 */
 
 footer {
- position: relative;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- width: 100%;
- background-color: $bgDefault;
- color: $colDefault;
- min-height: 50px;
- margin-top: -50px;
- .heart a {
-   color: #dc3545;
- }
- a {
-   color: $colHighlight;
- }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: $bgDefault;
+  color: $colDefault;
+  min-height: 50px;
+  margin-top: -50px;
+  .heart a {
+    color: #dc3545;
+  }
+  a {
+    color: $colHighlight;
+  }
 }
 
 table.categories {
