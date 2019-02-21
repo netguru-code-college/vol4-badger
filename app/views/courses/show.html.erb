@@ -25,12 +25,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+   
         <% @resources.each do |res| %>
+      <tr>
         <td><%= res.title %></td>
         <td><%= res.link %></td>
         <td><input type="checkbox" value="completed"> </td>
-        <% end %>
+        <% end %>        
       </tr>
     </tbody>
   </table>
