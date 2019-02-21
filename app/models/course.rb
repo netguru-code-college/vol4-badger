@@ -6,6 +6,7 @@ class Course < ApplicationRecord
 
   has_many :resources
   has_many :attachments
+  accepts_nested_attributes_for :resources
 
   def author
     course_students.find_by(author: true)&.student&.username
